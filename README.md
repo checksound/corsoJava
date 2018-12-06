@@ -21,7 +21,7 @@ Libro: **Java in a Nutshell** - 6ht edition
 | float | IEEE 754 floating point | 0.0 | 32 bits | 1.4E-45 to 3.4028235E+380 |
 | double | IEEE 754 floating point | 0.0 | 64 bits | 4.9E-324 to 1.7976931348623157E+308 |
 
-#### Tipo buleano (boolean type)
+#### Tipo booleano (boolean type)
 
 ```java
 boolean isMonday = true;
