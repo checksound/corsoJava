@@ -6,7 +6,7 @@ Specifiche Java https://docs.oracle.com/javase/specs/index.html
 
 Java doc: https://docs.oracle.com/javase/7/docs/api/index.html?overview-summary.html
 
-Libro: **Java in a Nutshell** - 6ht edition
+Libro: **Java in a Nutshell** - 6th edition
 
 ### Tipi primitivi in JAVA
 
@@ -113,7 +113,7 @@ public class Start {
 }
 ```
 
-[Perché la somma di tipi byte diventa tipo intero](https://stackoverflow.com/questions/21895078/why-is-the-sum-of-bytes-integer)
+[Perché la somma di tipi byte diventa tipo intero](https://stackoverflow.com/questions/21895078/why-is-the-sum-of-bytes-integer) - regole di promozione dei tipi.
 
 ### Tipi decimali (Floating-point types)
 
