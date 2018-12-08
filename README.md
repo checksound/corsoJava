@@ -186,9 +186,9 @@ data.b = false;
 ```
 ### Ugualianza per riferimento vs. Ugualianza per valore
 
-Se utilizzo l'operatore `==` verifico l'ugualianza per riferimento.
+Se utilizzo l'operatore `==` verifico l'**ugualianza per riferimento**.
 
-La classe `Object` classe padre di tutte le classi ho il metodo `boolean equals(Object obj)` che può essere utilizzato se reimplementato nelle nostre classi per eseguire l'ugualianza per valore. Di default anche il metodo `equals` di `Object` esegue ugualinza per riferimento.
+La classe `Object` classe padre di tutte le classi ho il metodo `boolean equals(Object obj)` che può essere utilizzato, se reimplementato nelle nostre classi, per eseguire l'**ugualianza per valore**. Di default anche il metodo `equals` di `Object` esegue ugualianza per riferimento.
 
 Vediamo esempio:
 
@@ -316,6 +316,10 @@ public class Vino {
 }
 
 ```
+
+Vedi anche: https://codingjam.it/tutorial-java-il-metodo-equals-e-loperatore/ per ulteriore spiegazione.
+
+
 
 
 
