@@ -184,6 +184,68 @@ data.i = 47;
 data.d = 1.1;
 data.b = false;
 ```
+
+### Valori di default dei tipi primitivi
+
+Quando un tipo primitivo è membro di una classe, se non inizializzato prende i seguenti valori:
+
+| Primitive type | Default |
+|----------------|---------|
+| boolean        | false   |
+| char           | ‘\u0000’ (null) |
+| byte | (byte)0 |
+| short | (short)0 |
+| int   | 0 |
+| long  |0L |
+| float | 0.0f |
+| double | 0.0d |
+
+Questo non è garantito invece per le *variabili locali* che prendono un valore arbitrario (come in C e C++), è compito del programmatore inizializzarle prima dell'utilizzo altrimenti il compilatore dà errore di compilazione.
+
+Es:
+
+```java
+int v;
+
+// v non è stato ancora inizializzato --> errore di compilazione
+myObject.print(v);
+
+```
+
+### Metodi, argomenti e valori di ritorno.
+
+I metodi in java determinano il messaggio che un oggetto può ricevere.
+
+```java
+ReturnType methodName( /* Argument list */ ) {
+/* Method body */
+}
+```
+Esempio di chiamata di un metodo:
+```java
+objectName.methodName(arg1, arg2, arg3);
+```
+Esempio con parametro di ritorno:
+```java
+int x = a.f();
+```
+Il tipo del ritorno deve essere compatibile con il tipo di **x**. La chiamata di un metodo è spesso detto *inviare un messaggio all'oggetto*. Nell'esempio precedente, il messaggio è **f()** e l'oggetto è **a**. La programmazione ad oggetti è spesso sintetizzata con il concetto di 'spedire un messaggio a un oggetto'. 
+
+
+## Costruzione del primo programma
+
+```java
+
+// HelloDate.java
+import java.util.*;
+public class HelloDate {
+		public static void main(String[] args) {
+				System.out.println("Hello, it’s: ");
+				System.out.println(new Date());
+		}
+}
+```
+
 ### Ugualianza per riferimento vs. Ugualianza per valore
 
 Se utilizzo l'operatore `==` verifico l'**ugualianza per riferimento**.
