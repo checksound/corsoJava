@@ -36,11 +36,24 @@ Importante sapere che per ogni tipo primitivo esiste il corrispettivo tipo wrapp
 | float | Float |
 | double | Double |
 
-Mentre i tipi primitivi vengono allocati nell'area di memoria dello stack e la variabile contiene il valore direttamente, i tipi corrispondenti di tipo reference, instanziati con l'operazione di *new* sono allocati nell'area di memoria dello heap (più lenta come operazione di allocazione).
+Esempio utilizzo tipo prinitivo e wrapper:
+
+```java
+double b1 = 123.65;
+
+Double b2 = new Double(123.65); //wrapper class
+```
+I tipi wrapper sono classi che incapulano i tipi primitivi: per instanziare la classe si utilizza la **new** che alloca la memoria per l'oggetto.
+
+![primitive_vs_wrapper_types](./primitive_vs_wrapper_types.png)
+
+Utilizzzati all'interno di un metodo, i tipi primitivi vengono allocati nell'area di memoria dello stack e la variabile contiene il valore direttamente, i tipi corrispondenti di tipo reference, instanziati con l'operazione di **new**, sono allocati invece, nell'area di memoria dello heap (più lenta come operazione di allocazione).
 
 La scelta di mantenere tipi primitivi nel design del linguaggio Java è stata giustificata proprio per questioni di performance.
 
-#### Tipo booleano (boolean type)
+I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti.
+
+### Tipo booleano (boolean type)
 
 ```java
 boolean isMonday = true;
@@ -78,20 +91,19 @@ Non è uno dei tipi primitivi, infatti in java c'è la classe [String](https://d
 "Hello, world"
 "'This' is a string!"
 ```
-### Tipo intero (Integer types)
+### Tipo intero
 
-Notazione ottale ( `0` - zero davanti) ed esadecimale `0x` o `0X`.
+`byte`, `short`, `integer` e `long`
+
+E' possiblile esprimere il valore anche in notazione ottale ( `0` - zero davanti) ed esadecimale `0x` o `0X`.
 
 ```java
 0xff // Decimal 255, expressed in hexadecimal
 0377 // The same number, expressed in octal (base 8)
 0b0010_1111 // Decimal 47, expressed in binary
-0xCAFEBABE // A magic number used to identify Java class files
 ```
 
-[The magic world in java cafebabe](https://dzone.com/articles/the-magic-word-in-java-cafebabe)
-
-Tipo `long`
+Per il tipo `long` il valore si esprime mettendo il carattere `l` o `L` alla fine del numero.
 
 ```java
 1234 // An int value
@@ -99,40 +111,13 @@ Tipo `long`
 0xffL // Another long value
 ```
 
-Dividere un intero per `0` o eseguire l'operazione modulo `0` genera l'errore a runtime [ArithmeticException](https://docs.oracle.com/javase/7/docs/api/java/lang/ArithmeticException.html).
+*N.B*: Dividere un intero per `0` o eseguire l'operazione modulo `0` genera l'errore a runtime [ArithmeticException](https://docs.oracle.com/javase/7/docs/api/java/lang/ArithmeticException.html).
 
 Ogni tipo intero ha la corrispondente classe wrapper di tipo `Byte`, `Short`, `Integer` e `Long`.
 
 Ognuna di queste classi definisce le costanti `MIN_VALUE` e `MAX_VALUE` che descrivono il range (intervallo) del tipo. 
 
 Inoltre queste classi wrapper includono dei metodi statici come [Byte.parseByte](https://docs.oracle.com/javase/7/docs/api/java/lang/Byte.html#parseByte(java.lang.String)) o [Integer.parseInt](https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#parseInt(java.lang.String)) per convertire da stringa a tipo primitivo. 
-
-Esempio:
-
-```java
-package it.isisgallarate.tipi_interi;
-
-public class Start {
-
-	public static void main(String[] args) {
-		
-		byte b1 = 127, b2 = 1; // Largest byte is 127
-		byte sum = (byte)(b1 + b2); // Sum wraps to -128, the smallest byte
-		
-		int sumInt = b1 + b2; // automaticamente promizione a int 
-		
-		System.out.println("Somma tipo byte:" + sum);
-		System.out.println("Somma di tipo integer: " + sumInt);
-		
-		
-		int f = 5/0; // throws java.lang.ArithmeticException
-		
-	}
-
-}
-```
-
-[Perché la somma di tipi byte diventa tipo intero](https://stackoverflow.com/questions/21895078/why-is-the-sum-of-bytes-integer) - regole di promozione dei tipi.
 
 **ESERCIZIO**: 
 Utilizzo di alcune classi standard della JDK per convertire stringhe di input nei numeri corrispondenti come interi.
@@ -148,17 +133,34 @@ numero.
 
 ### Tipi decimali (Floating-point types)
 
-float e double
+I valori dei numeri decimali sono di default di tipo `double`, per esprimeri come tipo  `float` aggiungere la lettera `f`o `F` a fine numero.
 
+```java
+float f = 6.76f;
+double d = 6.76;
+```
+I numeri decimali possono anche essere espressi in notazione scintifica, con esponente, in cui il numero è seguito dalla lettera e o E (per esponente) e un altro numero. Quest'altro numero rappresenta l'esponente base 10 per il quale il primo numero è moltiplicato:
 
+```java
+1.2345E02 // 1.2345 * 10^2 or 123.45
+1e-6 // 1 * 10^-6 or 0.000001
+6.02e23 // Avogadro's Number: 6.02 * 10^23
+```
+
+Float e double in notazione scientifica:
+
+```java
+double d = 6.02E23;
+float f = 6.02e23f;
+```
 
 ## Reference Types
 
 E' un tipo di dato che è basato su una classe, istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
 
-Altri tipi di reference type oltre alle classi sono gli array e i tipi enumerativi.
+Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
 
-Definiamo una classe con alcuni semplici field.
+Definiamo una classe con alcuni semplici attributi.
 
 ```java
 class DataOnly {
@@ -173,7 +175,7 @@ questa classe non fa niente se non contenere dei dati. Se creiamo un oggeto da q
 DataOnly data = new DataOnly();
 ```
 
-tramite la refernce data possiamo mofificare l'aggetto:
+tramite la refernce data possiamo modificare l'oggetto:
 
 ```java
 objectReference.member
@@ -184,6 +186,27 @@ data.i = 47;
 data.d = 1.1;
 data.b = false;
 ```
+### Assegnamento dei tipi reference 
+
+Esempio:
+
+```java
+int i1 = 5;
+int i2 = 7;
+Persona p1 = new Persona("Mario", "Rossi");
+Persona p2 = new Persona("Mario", "Verdi");
+```
+![tipi-primitivi-oggetti](./tipi-primitivi-oggetti.png)
+
+Fin qui sembra tutto semplice, andiamo avanti facendo un po’ di assegnazioni:
+
+```java
+i2 = i1;
+p2 = p1;
+```
+![condivisione-di-memoria](./condivisione-di-memoria.png)
+
+Adesso p1 e p2 puntano allo stesso oggetto: abbiamo una condivisione di memoria che può risultare pericolosa se non gestita adeguatamente. Infatti richiamando un metodo setter su uno dei due oggetti (per esempio `p1.setNome("Fabio")`) si modificherà l’oggetto condiviso dai due puntatori. Non è sicuramente un dramma (e a volte può essere una cosa utile da sfruttare) ma è comunque una cosa da tenere presente.
 
 ### Valori di default dei tipi primitivi
 
