@@ -49,9 +49,9 @@ I tipi wrapper sono classi che incapulano i tipi primitivi: per instanziare la c
 
 Utilizzzati all'interno di un metodo, i tipi primitivi vengono allocati nell'area di memoria dello stack e la variabile contiene il valore direttamente, i tipi corrispondenti di tipo reference, instanziati con l'operazione di **new**, sono allocati invece, nell'area di memoria dello heap (più lenta come operazione di allocazione).
 
-La scelta di mantenere tipi primitivi nel design del linguaggio Java è stata giustificata proprio per questioni di performance.
+La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance.
 
-I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti.
+I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti (Vedremo in seguito le collection in java).
 
 ### Tipo booleano (boolean type)
 
