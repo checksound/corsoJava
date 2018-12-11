@@ -212,7 +212,12 @@ Vediamo passo passo gli statement eseguiti a livello di memoria.
 
 ![instanziazione_obj](./instanziazione_obj.png)
 
-ESERCIZIO: 
+**DOMANDA:**  
+Ma la classe `DataOnly` è come una `struct` in C?
+
+Si, ma quando creo l'oggetto in java con la `new`, l'oggetto reference è come un puntatore alla `struct`.  In java, tranne che per i tipi primitivi, lavoro sempre per reference.
+
+**ESERCIZIO:** 
 1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly` e instanziazione e modifica dello stato;
 
 Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
@@ -287,6 +292,48 @@ int x = a.f();
 ```
 Il tipo del ritorno deve essere compatibile con il tipo di **x**. La chiamata di un metodo è spesso detto *inviare un messaggio all'oggetto*. Nell'esempio precedente, il messaggio è **f()** e l'oggetto è **a**. La programmazione ad oggetti è spesso sintetizzata con il concetto di 'spedire un messaggio a un oggetto'. 
 
+### sttributi e metodo statici di una classe
+
+```java
+class StaticTest {
+	static int i = 47;
+}
+```
+Anche quando creiamo due oggetti distinti abbiamo una sola zona di memoria per
+`StaticTest.i`: i due oggetti condividono la stessa `i`. Esempio:
+
+```java
+StaticTest st1 = new StaticTest();
+StaticTest st2 = new StaticTest();
+```
+
+A questo punto entrambi gli oggetti `st1.i` e `st2.i` condividono la stessa zona di memoria contenete il valore **47**.
+
+```java
+StaticTest.i++;
+```
+A questo punto `st1.i` e `st2.i` valgono **48**.
+
+L'utilizzo del nome della classe è il modo preferito per riferirsi alle variabili **static**.
+
+Logica simile è utilizzata per i metodi **static**. La sintassi è `ClassName.method( )`. Esempio:
+
+```java
+class Incrementable {
+	static void increment() { StaticTest.i++; }
+}
+```
+```java
+Incrementable sf = new Incrementable();
+sf.increment();
+```
+
+O lo puoi invocare, direttamente dalla classe, così:
+
+```java
+Incrementable.increment();
+```
+Sebbene **static** quando applicato agli attributi di una classe, cambia il modo in cui il dato è creato (uno per ogni classe rispetto a uno per ogno oggetto per le classi non-**static**), quando applicato ai metodi, il cambiamanto non è così drammatico. Un uso dei metodi **static** è quello di invocare un metodo senza creare l'oggetto. 
 
 ## Costruzione del primo programma
 
