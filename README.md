@@ -54,11 +54,20 @@ Double b2 = new Double(123.65);
 
 Double b3 = new Double(600.98); 
 
+// metodo equals della classe Double
 if(b2.equals(b3)){
 	System.out.println("B2 e B3 sono equals");
 } else {
 	System.out.println("B2 e B3 sono NON equals"); 
 }
+
+// metodo doubleValue
+
+// metodo che ritorna in tipo primitivo 'double'
+double dB = b2.doubleValue(); // return 123.65
+
+// metodo statico per convertire da stringa a tipo primitivo 'double'
+double dB2 = Double.parseDouble("123.65");
 ```
 
 La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance: allocazione di dati sullo stack è più veloce rispetto alla `new` che alloca nell'area di memoria dello `heap`, inoltre l'accesso al tipo primitivo è diretto, mentre quello all'oggetto wrapper è tramite reference.
@@ -202,6 +211,9 @@ dataObj.b = false;
 Vediamo passo passo gli statement eseguiti a livello di memoria.
 
 ![instanziazione_obj](./instanziazione_obj.png)
+
+ESERCIZIO: 
+1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly` e instanziazione e modifica dello stato;
 
 Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
 
