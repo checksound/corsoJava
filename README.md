@@ -47,9 +47,21 @@ I tipi wrapper sono classi che incapulano i tipi primitivi: per instanziare la c
 
 ![primitive_vs_wrapper_types](./primitive_vs_wrapper_types.png)
 
-Utilizzzati all'interno di un metodo, i tipi primitivi vengono allocati nell'area di memoria dello stack e la variabile contiene il valore direttamente, i tipi corrispondenti di tipo reference, instanziati con l'operazione di **new**, sono allocati invece, nell'area di memoria dello heap (più lenta come operazione di allocazione).
+Utilizzzati all'interno di un metodo, i tipi primitivi vengono allocati nell'area di memoria dello stack e la variabile contiene il valore direttamente, i tipi corrispondenti di tipo reference, instanziati con l'operazione di **new**, sono allocati invece, nell'area di memoria dello heap.
 
-La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance.
+```java
+Double b2 = new Double(123.65); 
+
+Double b3 = new Double(600.98); 
+
+if(b2.equals(b3)){
+	System.out.println("B2 e B3 sono equals");
+} else {
+	System.out.println("B2 e B3 sono NON equals"); 
+}
+```
+
+La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance: allocazione di dati sullo stack è più veloce rispetto alla `new` che alloca nell'area di memoria dello `heap`, inoltre l'accesso al tipo primitivo è diretto, mentre quello all'oggetto wrapper è tramite reference.
 
 I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti (Vedremo in seguito le collection in java).
 
@@ -91,9 +103,10 @@ Non è uno dei tipi primitivi, infatti in java c'è la classe [String](https://d
 "Hello, world"
 "'This' is a string!"
 ```
+
 ### Tipo intero
 
-`byte`, `short`, `integer` e `long`
+`byte`, `short`, `int` e `long`
 
 E' possiblile esprimere il valore anche in notazione ottale ( `0` - zero davanti) ed esadecimale `0x` o `0X`.
 
@@ -156,9 +169,9 @@ float f = 6.02e23f;
 
 ## Reference Types
 
-E' un tipo di dato che è basato su una classe, istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
+Tutti i tipi di dati che **non** sono primitivi (`int`, `char`, `short`.... visti prima) sono di tipo reference: quando creo un oggetto da una classe con l'operazione di `new` creo una reference all'oggetto, un riferimento che mi permette di utilizzare l'oggetto, cioè modificare il suo stato. E' un tipo di dato che è un istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
 
-Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
+Finora abbiamo visto esempi di reference creati dalle classi wrapper dei tipi primitivi, classi già definite all'interno del JDK.
 
 Definiamo una classe con alcuni semplici attributi.
 
@@ -169,23 +182,29 @@ class DataOnly {
 	boolean b;
 }
 ```
-questa classe non fa niente se non contenere dei dati. Se creiamo un oggeto da questa classe:
+questa classe non fa niente se non contenere dei dati. Se creiamo un oggeto da questa classe, `dataObj` è la reference:
 
 ```java
-DataOnly data = new DataOnly();
+DataOnly dataObj = new DataOnly();
 ```
 
-tramite la refernce data possiamo modificare l'oggetto:
+tramite la refernce data possiamo modificare l'oggetto (modificare il suo stato):
 
 ```java
 objectReference.member
 ```
 Per esempio:
 ```java
-data.i = 47;
-data.d = 1.1;
-data.b = false;
+dataObj.i = 47;
+dataObj.d = 1.1;
+dataObj.b = false;
 ```
+Vediamo passo passo gli statement eseguiti a livello di memoria.
+
+![instanziazione_obj](./instanziazione_obj.png)
+
+Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
+
 ### Assegnamento dei tipi reference 
 
 Esempio:
@@ -234,6 +253,8 @@ int v;
 myObject.print(v);
 
 ```
+
+Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
 
 ### Metodi, argomenti e valori di ritorno.
 
