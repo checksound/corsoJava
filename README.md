@@ -292,7 +292,7 @@ int x = a.f();
 ```
 Il tipo del ritorno deve essere compatibile con il tipo di **x**. La chiamata di un metodo è spesso detto *inviare un messaggio all'oggetto*. Nell'esempio precedente, il messaggio è **f()** e l'oggetto è **a**. La programmazione ad oggetti è spesso sintetizzata con il concetto di 'spedire un messaggio a un oggetto'. 
 
-### sttributi e metodo statici di una classe
+### Attributi e metodo statici di una classe
 
 ```java
 class StaticTest {
