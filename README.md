@@ -502,10 +502,16 @@ Vedi anche: https://codingjam.it/tutorial-java-il-metodo-equals-e-loperatore/ pe
 
 * Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
-* Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la spova a utilizzare invece la classe `java.util.Vector`. 
+* Definite due classe con diverso nome ma praticamente uguali come attributi, l'unica differenza che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals`, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
 
 * Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la clone di un oggetto (esempio un oggetto di tipo Persona o definite uan vostra classe). Modificate gli attributi e fere vedere le differenze rispetto all'assegnamento. 
- 
+
+* Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare a una reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`.
+
+* Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la spova a utilizzare invece la classe `java.util.Vector`. 
+
+
+
 
 
 
