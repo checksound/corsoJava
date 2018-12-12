@@ -8,7 +8,21 @@ Java doc: https://docs.oracle.com/javase/7/docs/api/index.html?overview-summary.
 
 Libro: **Java in a Nutshell** - 6th edition
 
+## ALCUNE SEMPLICI DEFINIZIONI
+
+Java è un linguaggio di programmazione ad oggetti. I linguaggi di programmazione ad oggetti vengono ideati intorno alla fine degli anni 60, il primo linguaggio ad oggetti il *Simula-67* serviva per eseguire simulazioni, da qui il nome. Linguaggi comuni precedentemente erano quelli procedurali come *PASCAL* e *C*, in cui il programmatore definiva strutture dati e algoritmi (funzioni) che agivano su queste strutture dati. 
+
+Con la programmazione ad oggetti, il programmatore crea oggetti che modellano il problema e ogni oggetto ha un proprio stato ed riponde a dei messaggi.
+
+Facciamo un esempio: abbiamo un oggetto *lampadina*, che ha lo stato possibile acceso o spento e risponde ai messaggi (espone dei metodi) accendi e spegni. Oggetti che hanno medesime caratteristiche vengono raggruppati in classi (tipi di dato con comportamento associato), ad esempio *Lampadina* o ad esempio *Studente*. 
+
+Due oggetti della stessa classe ad esempio *Lampadina* possono avere stato diverso, una magari è accesa e l'altra spenta, rispondere agli stessi messaggi, *accendi* e *spegni*, ma dare risultati diversi in base al loro stato.  
+
+Ogni cosa in java è un oggetto (vedremo che ci sono anche delle eccezioni - i tipi primitivi). Code si generano gli oggetti? Dalle classi attraverso l'operazione di *new* che crea un oggetto dalla classe invocando il metodo construttore definito nella classe.
+
 ## Tipi primitivi in JAVA
+
+Come detto questi sono le uniche eccezioni al fatto che in java tutto è composto da oggetti.
 
 |Type |Contains| Default| Size| Range|
 |-----|--------|--------|-----|------|
@@ -484,11 +498,14 @@ public class Vino {
 
 Vedi anche: https://codingjam.it/tutorial-java-il-metodo-equals-e-loperatore/ per ulteriore spiegazione.
 
+**ESERCIZIO:**
 
+* Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
+* Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la spova a utilizzare invece la classe `java.util.Vector`. 
 
-
-
+* Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la clone di un oggetto (esempio un oggetto di tipo Persona o definite uan vostra classe). Modificate gli attributi e fere vedere le differenze rispetto all'assegnamento. 
+ 
 
 
 
