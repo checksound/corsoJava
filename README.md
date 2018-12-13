@@ -252,7 +252,7 @@ Ma la classe `DataOnly` è come una `struct` in C?
 Si, ma quando creo l'oggetto in java con la `new`, l'oggetto reference è come un puntatore alla `struct`.  In java, tranne che per i tipi primitivi, lavoro sempre per reference.
 
 **ESERCIZIO:** 
-1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly` e instanziazione e modifica dello stato;
+1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly`, eseguite instanziazione di un oggetto della classe e modificate dello stato; Eseguite la print dello stato modificato; Fate l'override del metodo `toString()` ereditato da Object per fare una visualizzazione più utile rispetto alla visualizzazione di default.
 
 Altri tipi di reference type, oltre alle classi, sono gli array e i tipi enumerativi.
 
@@ -368,6 +368,100 @@ O lo puoi invocare, direttamente dalla classe, così:
 Incrementable.increment();
 ```
 Sebbene **static** quando applicato agli attributi di una classe, cambia il modo in cui il dato è creato (uno per ogni classe rispetto a uno per ogno oggetto per le classi non-**static**), quando applicato ai metodi, il cambiamanto non è così drammatico. Un uso dei metodi **static** è quello di invocare un metodo senza creare l'oggetto. 
+
+## Costruzione di un programma
+
+### Visibilità dei nomi
+
+Organizzare il sorgente in **package**.
+
+La struttura di directory e sottodirectory deve rispettare il nome del package.
+
+Se abbiamo la seguente classe:
+
+```java
+
+package it.isisgallarate.base;
+
+public class TestSimpleClass {
+	
+	public static void main(String args[]) {
+		
+		DataOnly dataObj = new DataOnly();
+		
+		dataObj.i = 47;
+		dataObj.d = 1.1;
+		dataObj.b = false;
+		
+	}
+}
+
+class DataOnly {
+	int i;
+	double d;
+	boolean b;
+}
+
+```
+
+il codice sarà in un file nella directory `it/isisgallarate/base/TestSimpleClass.java`
+
+Se per ordine nel progetto mettiamo il codice sorgente nella directory `src`, per compilare:
+
+`javac -d target src\it\isisgallarate\base\TestSimpleClass.java`
+
+Il codice compilato .class viene creato nella directory target perchè abbiamo specificato l'opzione *-d*.
+
+Per eseguire:
+
+`java -classpath target it.isisgallarate.base.TestSimpleClass`
+
+DA NOTARE: 
+
+```
+
+PS D:\PROGETTI\workspace\TestEquals> .\build_siple_class.bat
+
+D:\PROGETTI\workspace\TestEquals>javac -d target src\it\isisgallarate\base\TestSimpleClass.java
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals> cd .\target\
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target> java it.isisgallarate.base.TestSimpleClass
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target>
+PS D:\PROGETTI\workspace\TestEquals\target> cd ..
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals> java it.isisgallarate.base.TestSimpleClass
+Error: Could not find or load main class it.isisgallarate.base.TestSimpleClass
+Caused by: java.lang.ClassNotFoundException: it.isisgallarate.base.TestSimpleClass
+PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\TestEquals>
+```
+
+### Utilizzo di altri componenti
+
+Per importare la definizione di una classe utilizzare **import**. 
+
+`import java.util.ArrayList;`
+
+oppure 
+
+`import java.util.*; // tutte le classi sotto il pachetto java.util`
+
+Per le classi del JDK questo basta, siamo sicuri che il nostro codice potrù essere compilato (**javac**) ed eseguito (**java**).
+
+Se utilizziamo librerie esterne al JDK queste devono essere visibili: l'opzione `-classpath` al comando javac e java permette di specificare il path di queste librerie.
 
 ## Costruzione del primo programma
 
