@@ -373,6 +373,8 @@ Sebbene **static** quando applicato agli attributi di una classe, cambia il modo
 
 Vedi progetto [IntroduzioneJava](https://github.com/5MAINF/IntroduzioneJava) per esempi di semplici classi, script di compilazione ed esecuzione.
 
+Su package e CLASSPATH http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html
+
 ### Visibilità dei nomi
 
 Organizzare il sorgente in **package**.
