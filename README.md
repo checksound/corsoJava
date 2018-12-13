@@ -371,7 +371,7 @@ Sebbene **static** quando applicato agli attributi di una classe, cambia il modo
 
 ## Costruzione di un programma
 
-Vedi progetto [IntroduzioneJava](https://github.com/5MAINF/IntroduzioneJava)
+Vedi progetto [IntroduzioneJava](https://github.com/5MAINF/IntroduzioneJava) per esempi di semplici classi, problematiche di compilazione ed esecuzione.
 
 ### Visibilità dei nomi
 
