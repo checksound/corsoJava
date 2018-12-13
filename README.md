@@ -86,7 +86,27 @@ double dB2 = Double.parseDouble("123.65");
 
 La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance: allocazione di dati sullo stack è più veloce rispetto alla `new` che alloca nell'area di memoria dello `heap`, inoltre l'accesso al tipo primitivo è diretto, mentre quello all'oggetto wrapper è tramite reference.
 
-I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti (Vedremo in seguito le collection in java).
+I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti. Per analogia sulle collezioni, con quanto già visto in C# (Commonly Used Collection Types)[https://docs.microsoft.com/en-us/dotnet/standard/collections/commonly-used-collection-types].
+
+
+Tipi collezioni in java (solo per far capire di cosa parliamo)
+
+![Interfacce collezioni](./colls-coreInterfaces.gif)
+
+Gli array sono il primo tipo di collezioni che vediamo, ma a differenza delle classi che fanno parte delle java collection, hanno dimensione fissata una volta creati.
+
+Es:
+
+```java
+// array di 10 interi
+int arr[] = new int[10];
+
+// java.util.ArrayList
+ArrayList<Integer> arrL = new ArrayList<Integer>();
+
+ArrayList<Person> arrL = new ArrayList<Person>();
+
+```
 
 ### Tipo booleano (boolean type)
 
