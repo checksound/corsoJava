@@ -251,6 +251,8 @@ Ma la classe `DataOnly` è come una `struct` in C?
 
 Si, ma quando creo l'oggetto in java con la `new`, l'oggetto reference è come un puntatore alla `struct`.  In java, tranne che per i tipi primitivi, lavoro sempre per reference.
 
+Vedi [StructInC-JavaClass](https://github.com/5MAINF/StructInC-JavaClass) per raffrontro tra codice in c e corrispettivo in java.
+
 **ESERCIZIO:** 
 1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly`, eseguite instanziazione di un oggetto della classe e modificate dello stato; Eseguite la print dello stato modificato; Fate l'override del metodo `toString()` ereditato da Object per fare una visualizzazione più utile rispetto alla visualizzazione di default.
 
@@ -420,37 +422,29 @@ Per eseguire:
 
 `java -classpath target it.isisgallarate.base.TestSimpleClass`
 
-DA NOTARE: 
+**DA NOTARE** senza specidicare l'opzione **-classpath**, non trova la classe: 
 
 ```
 
-PS D:\PROGETTI\workspace\TestEquals> .\build_siple_class.bat
+PS D:\PROGETTI\workspace\IntroduzioneJava> .\build_siple_class.bat
 
-D:\PROGETTI\workspace\TestEquals>javac -d target src\it\isisgallarate\base\TestSimpleClass.java
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals> cd .\target\
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target> java it.isisgallarate.base.TestSimpleClass
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target>
-PS D:\PROGETTI\workspace\TestEquals\target> cd ..
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals> java it.isisgallarate.base.TestSimpleClass
+D:\PROGETTI\workspace\IntroduzioneJava>javac -d target src\it\isisgallarate\base\TestSimpleClass.java
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava> cd .\target\
+PS D:\PROGETTI\workspace\IntroduzioneJava\target>
+PS D:\PROGETTI\workspace\IntroduzioneJava\target>
+PS D:\PROGETTI\workspace\IntroduzioneJava\target> java it.isisgallarate.base.TestSimpleClass
+PS D:\PROGETTI\workspace\IntroduzioneJava\target>
+PS D:\PROGETTI\workspace\IntroduzioneJava\target> cd ..
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava> java it.isisgallarate.base.TestSimpleClass
 Error: Could not find or load main class it.isisgallarate.base.TestSimpleClass
 Caused by: java.lang.ClassNotFoundException: it.isisgallarate.base.TestSimpleClass
-PS D:\PROGETTI\workspace\TestEquals>
-PS D:\PROGETTI\workspace\TestEquals>
+PS D:\PROGETTI\workspace\IntroduzioneJava>
+PS D:\PROGETTI\workspace\IntroduzioneJava>
 ```
 
 ### Utilizzo di altri componenti
