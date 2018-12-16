@@ -132,9 +132,11 @@ Tipi collezioni in java (solo per far capire di cosa parliamo)
 
 ![Interfacce collezioni](./colls-coreInterfaces.gif)
 
-Gli array sono il primo tipo di collezioni che vediamo, ma a differenza delle classi che fanno parte delle java collection, hanno dimensione fissata una volta creati.
+Gli [array](./Array.md) sono il primo tipo di collezioni che vediamo, sono la struttura dati più efficiente per mantenere dati sia primitivi che reference a oggetti omogenei ma hanno il limite che una volta creati hanno dimensione fissa. 
 
-Es:
+Per questo, per avere strutture dati che abbiano dimensione variabile in base alle esigenze sono state introdotte nel JDK le [java collections](./Collections.md), un insieme di classi con diverse caratteristiche per tenere gli oggetti che sono stati creati nel programma.
+
+Esempio di creazione di un array vs un `java.util.ArrayList`, struttura dati che fa parte delle [java collections](./Collections.md):
 
 ```java
 // array di 10 interi
