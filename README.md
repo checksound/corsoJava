@@ -14,11 +14,50 @@ Java è un linguaggio di programmazione ad oggetti. I linguaggi di programmazion
 
 Con la programmazione ad oggetti, il programmatore crea oggetti che modellano il problema e ogni oggetto ha un proprio stato ed riponde a dei messaggi.
 
-Facciamo un esempio: abbiamo un oggetto *lampadina*, che ha lo stato possibile acceso o spento e risponde ai messaggi (espone dei metodi) accendi e spegni. Oggetti che hanno medesime caratteristiche vengono raggruppati in classi (tipi di dato con comportamento associato), ad esempio *Lampadina* o ad esempio *Studente*. 
+Facciamo un esempio: abbiamo un oggetto di tipo *lampadina*, che ha lo stato possibile *acceso* o *spento* e risponde ai messaggi (espone dei metodi) *accendi* e *spegni* che modificano lo stato dell'oggetto. Oggetti che hanno medesime caratteristiche appartengono alla stessa classe, ad esempio la classe *Lampadina* o la classe *Studente*. 
 
-Due oggetti della stessa classe ad esempio *Lampadina* possono avere stato diverso, una magari è accesa e l'altra spenta, rispondere agli stessi messaggi, *accendi* e *spegni*, ma dare risultati diversi in base al loro stato.  
+Due oggetti della stessa classe ad esempio *Lampadina* possono avere stato diverso: una magari è accesa e l'altra spenta, rispondono agli stessi messaggi, *accendi* e *spegni*, ma dare risultati diversi in base al loro stato di ogni oggetto.  
 
-Ogni cosa in java è un oggetto (vedremo che ci sono anche delle eccezioni - i tipi primitivi). Code si generano gli oggetti? Dalle classi attraverso l'operazione di *new* che crea un oggetto dalla classe invocando il metodo construttore definito nella classe.
+Ogni cosa in java è un oggetto (vedremo che ci sono anche delle eccezioni - i tipi primitivi). Come si creano gli oggetti in un programma? Dalle classi attraverso l'operazione di *new* che crea un oggetto dalla classe invocando il metodo construttore definito nella classe.
+
+Quindi scrivendo il codice in java prima si definiscono le classi di oggetti necessari per descrivere il nostro problema e poi si creano, dalle classi, gli oggetti ognuno con un proprio stato.  
+
+Nell'esempio delle lampadine definisco la classe **Lampadina** ed creo due oggetti **lampadina1** e **lampadina2**.
+
+```
+// pseudo codice 
+
+// definizione classe Lampadina
+class Lampadina {
+	// attribito classe 
+	boolean luceStatus; 
+	Lampadina() {
+		this.luceStatus = false;
+	}
+    
+	Lampadina(luceStatus) {
+		this.luceStatus = luceStatus;
+	}
+    
+	// metodi
+	void accendi() {
+		this.luceStatus = true;
+	}
+
+	void spegni() {
+		this.luceStatus = false;
+	}
+}  // fine definizione classe
+
+// creo una lampadina già accesa
+Lampadina lampadina1 = new Lampadina(true);
+lampadina1.spegni(); // invoco il metodo di spegnimento
+
+// seconda lampadina
+Lampadina lampadina2 = new Lampadina(true);
+lampadina2.accendi(); // invoco il metodo di accensione
+
+```
 
 ## Tipi primitivi in JAVA
 
@@ -375,7 +414,7 @@ Sebbene **static** quando applicato agli attributi di una classe, cambia il modo
 
 Vedi progetto [IntroduzioneJava](https://github.com/5MAINF/IntroduzioneJava) per esempi di semplici classi, script di compilazione ed esecuzione.
 
-Su package e CLASSPATH http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html
+Su **package**, **import** e **CLASSPATH**, vedi: http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html
 
 ### Visibilità dei nomi
 
@@ -614,13 +653,16 @@ Vedi anche: https://codingjam.it/tutorial-java-il-metodo-equals-e-loperatore/ pe
 
 * Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
-* Definite due classe con diverso nome ma praticamente uguali come attributi, l'unica differenza che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals`, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
+* Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
 
 * Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la clone di un oggetto (esempio un oggetto di tipo Persona o definite uan vostra classe). Modificate gli attributi e fere vedere le differenze rispetto all'assegnamento. 
 
 * Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare a una reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`.
 
-* Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la spova a utilizzare invece la classe `java.util.Vector`. 
+* Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la prova a utilizzare invece la classe `java.util.Vector`. 
+
+* Utilizzare i metodi `contains` e `indexOf` della classe `java.util.Vector` per cercare se c'è una certo tipo di cassa di vini.
+
 
 
 
