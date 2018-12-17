@@ -317,7 +317,7 @@ Ma la classe `DataOnly` è come una `struct` in C?
 
 Si, ma quando creo l'oggetto in java con la `new`, l'oggetto reference è come un puntatore alla `struct`.  In java, tranne che per i tipi primitivi, lavoro sempre per reference.
 
-Vedi [StructInC-JavaClass](https://github.com/5MAINF/StructInC-JavaClass) per raffrontro tra codice in c e corrispettivo in java.
+Vedi [StructInC-JavaClass](https://github.com/5MAINF/StructInC-JavaClass) per raffrontro tra codice in linguaggio C e corrispettivo Java.
 
 **ESERCIZIO:** 
 1. Scrivete il codice relativo all'esempio di sopra - Classe `DataOnly`, eseguite instanziazione di un oggetto della classe e modificate dello stato; Eseguite la print dello stato modificato; Fate l'override del metodo `toString()` ereditato da Object per fare una visualizzazione più utile rispetto alla visualizzazione di default.
