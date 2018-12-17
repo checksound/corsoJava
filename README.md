@@ -14,7 +14,7 @@ Java è un linguaggio di programmazione ad oggetti. I linguaggi di programmazion
 
 Con la programmazione ad oggetti, il programmatore crea oggetti che modellano il problema e ogni oggetto ha un proprio stato ed riponde a dei messaggi.
 
-Facciamo un esempio: abbiamo un oggetto di tipo *lampadina*, che ha lo stato possibile *acceso* o *spento* e risponde ai messaggi (espone dei metodi) *accendi* e *spegni* che modificano lo stato dell'oggetto. Oggetti che hanno medesime caratteristiche appartengono alla stessa classe, ad esempio la classe *Lampadina* o la classe *Studente*. 
+Facciamo un esempio: abbiamo un oggetto di tipo *Lampadina*, che ha lo stato possibile *acceso* o *spento* e risponde ai messaggi (espone dei metodi) *accendi* e *spegni* che modificano lo stato dell'oggetto. Oggetti che hanno medesime caratteristiche appartengono alla stessa classe, ad esempio la classe *Lampadina* o la classe *Studente*. 
 
 Due oggetti della stessa classe ad esempio *Lampadina* possono avere stato diverso: una magari è accesa e l'altra spenta, rispondono agli stessi messaggi, *accendi* e *spegni*, ma dare risultati diversi in base al loro stato di ogni oggetto.  
 
@@ -724,6 +724,8 @@ int[] factors = new int[5];       // Declare and allocate a 5-element int array
 int numFactors = factors.length;  // numFactor is 5
 ```
 ![JavaBasics_array](./JavaBasics_array.png)
+
+Per paragone con il linguaggio C: [Array length in C](./howto_array_length_in_c.md)
 
 **ESERCIZIO:**
 
