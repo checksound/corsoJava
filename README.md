@@ -321,6 +321,10 @@ p2 = p1;
 
 Adesso p1 e p2 puntano allo stesso oggetto: abbiamo una condivisione di memoria che può risultare pericolosa se non gestita adeguatamente. Infatti richiamando un metodo setter su uno dei due oggetti (per esempio `p1.setNome("Fabio")`) si modificherà l’oggetto condiviso dai due puntatori. Non è sicuramente un dramma (e a volte può essere una cosa utile da sfruttare) ma è comunque una cosa da tenere presente.
 
+**N.B:** Ora l'oggetto *Persona* con nome *'Mario'* e cognome *'Verdi'* non avendo più nessuna reference da cui è puntato, può essere eliminato dal thread, sempre attivo nella JVM, del **garbage collector**.
+
+Il **garbage collector**, letteralmente collettore della spazzatura, si occupa di liberare la memoria dello heap degli oggetti non più referenziati all'interno del processo.  
+
 ### Valori di default dei tipi primitivi
 
 Quando un tipo primitivo è membro di una classe, se non inizializzato prende i seguenti valori:

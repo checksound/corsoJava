@@ -1,6 +1,6 @@
 # Array
 
-[Classe Input.java](http://pages.di.unipi.it/corradini/Didattica/LIP-07/Esempi/Input.java)
+[Classe Input.java](Input.java.md)
 
 [Array semplici](http://pages.di.unipi.it/corradini/Didattica/LIP-07/Array/ArraySemplici/index.html)
 
