@@ -54,11 +54,34 @@ Lampadina lampadina1 = new Lampadina(true);
 lampadina1.spegni(); // invoco il metodo di spegnimento
 
 // seconda lampadina
-Lampadina lampadina2 = new Lampadina(true);
+Lampadina lampadina2 = new Lampadina();
 lampadina2.accendi(); // invoco il metodo di accensione
 
 ```
+## Dichiarazione di variabili e tipi
 
+Un programma manipola dati. Una *variabile* è usata per contenere un dato che può essere manipolato.
+
+Per essere utilizzara una variabile deve essere dichiarata dandogli un nome e specificando anche il tipo.
+
+```java
+int sum;         // Declare an "int" variable named "sum"
+double average;  // Declare a "double" variable named "average"
+String message;  // Declare a "String" variable named "message"
+char grade;      // Declare a "char" variable named "grade"
+```
+
+Una variabile contiene un valore del tipo con cui è stata dichiarata. Es: ina variabile di tipo `int` può contenere solo valori di tipo interi come *123* ma non di tipo floating point come *11113.21*.
+
+Il seguente disegno fa vedere l'utilizzo di variabili di tre tipi: `int`, `double` e `String`. Una variabile di tipo `int` immagazzina interi, una variabile di tipo `double` numeri decimali e una di tipo `String` contiene del testo.
+
+![JavaBasics_Variable](./JavaBasics_Variable.png)
+
+Riprendendo l'esempio precedente la variabile lampadina1 è di tipo `Lampadina` (classe definita dal programmatore):
+
+```
+Lampadina lampadina1; // Dichiarazione di variabile
+```
 ## Tipi primitivi in JAVA
 
 Come detto questi sono le uniche eccezioni al fatto che in java tutto è composto da oggetti.
@@ -76,7 +99,9 @@ Come detto questi sono le uniche eccezioni al fatto che in java tutto è compost
 
 La dimensione del tipo non cambia a seconda dell'architettura della macchina come avvine nella maggiorparte dei linguaggi, garantendo in questo modo maggiore partabilità del codice.
 
-Importante sapere che per ogni tipo primitivo esiste il corrispettivo tipo wrapper, di tipo reference.
+![Type_Primitive](Type_Primitive.gif)
+
+Importante sapere che per ogni tipo primitivo esiste il corrispettivo tipo wrapper: classe corrispettiva che permette di creare oggetti corrispondenti al tipo primitivo.
 
 |Type |Wrapper type|
 |-----|--------|
@@ -253,7 +278,7 @@ float f = 6.02e23f;
 
 ## Reference Types
 
-Tutti i tipi di dati che **non** sono primitivi (`int`, `char`, `short`.... visti prima) sono di tipo reference: quando creo un oggetto da una classe con l'operazione di `new` creo una reference all'oggetto, un riferimento che mi permette di utilizzare l'oggetto, cioè modificare il suo stato. E' un tipo di dato che è un istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
+Variabili dichiarate del tipo di una classe definita nel JDK o definita dal programmatore sono di tipo reference: quando creo un oggetto da una classe con l'operazione di `new` creo una reference all'oggetto, un riferimento che mi permette di utilizzare l'oggetto, cioè modificare il suo stato. E' un tipo di dato che è un istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
 
 Finora abbiamo visto esempi di reference creati dalle classi wrapper dei tipi primitivi, classi già definite all'interno del JDK.
 
