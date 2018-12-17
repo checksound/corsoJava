@@ -157,7 +157,7 @@ Tipi collezioni in java (solo per far capire di cosa parliamo)
 
 ![Interfacce collezioni](./colls-coreInterfaces.gif)
 
-Gli [array](./Array.md) sono il primo tipo di collezioni che vediamo, sono la struttura dati più efficiente per mantenere dati sia primitivi che reference a oggetti omogenei ma hanno il limite che una volta creati hanno dimensione fissa. 
+Gli [array](#Array) sono il primo tipo di collezioni che vediamo, una collezione di tipi ordinata, sono la struttura dati più efficiente per mantenere dati sia primitivi che reference a oggetti omogenei ma hanno il limite che una volta creati hanno dimensione fissa. 
 
 Per questo, per avere strutture dati che abbiano dimensione variabile in base alle esigenze sono state introdotte nel JDK le [java collections](./Collections.md), un insieme di classi con diverse caratteristiche per tenere gli oggetti che sono stati creati nel programma.
 
@@ -679,6 +679,51 @@ public class Vino {
 ```
 
 Vedi anche: https://codingjam.it/tutorial-java-il-metodo-equals-e-loperatore/ per ulteriore spiegazione.
+
+## Array
+
+Supponete che volete calcolare la media di una classe di 30 studenti, voi certamente non volete creare 30 variabili, `mark1`, `mark2`...`mark30`, per contenere i voti. Invece potete usare una singola variabile chiamata *array* per contenere i 30 elementi.
+
+Un *array* è *una collezione ordinata di elementi dello stesso tipo*, identificata da una coppia di parentesi quadre []. Per usare un array dovete:
+1. *Dichiarare* un array con un *nome* e un *tipo*. Usa i nomi plurali per gli array, es: `marks`, `rows`, `numbers`. Tutti gli elementi appartengono allo stesso tipo.
+1. *Allocare* l'array usando l'operatore *new* o tramite l'*inizializzazione*, es:  
+
+```java
+int[] marks;  // Declare an int array named "marks"
+              // "marks" is assigned to a special value called "null" before allocation
+int marks[];  // Same as above, but the above syntax recommended
+marks = new int[5];   // Allocate 5 elements via the "new" operator
+// Declare and allocate a 20-element array in one statement via "new" operator
+int[] factors = new int[20];
+// Declare, allocate a 6-element array thru initialization
+int[] numbers = {11, 22, 33, 44, 55, 66}; // size of array deduced from the number of items
+```
+When an array is constructed via the new operator, all the elements are initialized to their default value, e.g., 0 for int, 0.0 for double, false for boolean, and null for objects. [Unlike C/C++, which does NOT initialize the array contents.]
+
+When an array is declared but not allocated, it has a special value called null.
+
+### Indice array
+
+```java
+int[] marks = new int[5];   // Declare & allocate a 5-element int array
+// Assign values to the elements
+marks[0] = 95;
+marks[1] = 85;
+marks[2] = 77;
+marks[3] = 69;
+marks[4] = 66;
+// Retrieve elements of the array
+System.out.println(marks[0]);
+System.out.println(marks[3] + marks[4]);
+```
+
+### Array length
+
+```java
+int[] factors = new int[5];       // Declare and allocate a 5-element int array
+int numFactors = factors.length;  // numFactor is 5
+```
+[JavaBasics_array](./JavaBasics_array.png)
 
 **ESERCIZIO:**
 
