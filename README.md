@@ -723,7 +723,7 @@ System.out.println(marks[3] + marks[4]);
 int[] factors = new int[5];       // Declare and allocate a 5-element int array
 int numFactors = factors.length;  // numFactor is 5
 ```
-[JavaBasics_array](./JavaBasics_array.png)
+![JavaBasics_array](./JavaBasics_array.png)
 
 **ESERCIZIO:**
 
