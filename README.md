@@ -356,19 +356,22 @@ Esempio con tipi primitivi
 
 ```
 // Dichiarazione		
-int val1; 
-val1 = 5;
+int valA; 
+valA = 5;
 
-int val2;
-val2 = val1; // assegnamento
+int valB;
+valB = valA; // assegnamento
 
-// modifico val1
-val1 = 6;
+// modifico valA
+valA = 6;
 
-// quanto vale val2?
+// quanto vale valB?
 
 ```
-`val2` contiene intero *5*.
+`valB` contiene intero *5*.
+
+Vedendo a livello di aree di memoria:
+![primitive_assignments](./primitive_assignment.png)
 
 Ora lo stesso esempio con tipi reference:
 
