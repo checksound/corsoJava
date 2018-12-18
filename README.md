@@ -350,7 +350,54 @@ Adesso p1 e p2 puntano allo stesso oggetto: abbiamo una condivisione di memoria 
 
 Il **garbage collector**, letteralmente collettore della spazzatura, si occupa di liberare la memoria dello heap degli oggetti non più referenziati all'interno del processo.  
 
-### Valori di default dei tipi primitivi
+### Assegnamento tipi reference vs tipi primitivi
+
+Esempio con tipi primitivi
+
+```
+// Dichiarazione		
+int val1; 
+val1 = 5;
+
+int val2;
+val2 = val1; // assegnamento
+
+// modifico val1
+val1 = 6;
+
+// quanto vale val2?
+
+```
+val2 contiene intero 5.
+
+Ora lo stesso esempio con tipi reference:
+
+```java
+class Persona {
+	int eta;
+
+	Persona(int eta) {
+		this.eta;
+	}
+}
+```
+```java
+Persona p1;
+p1 = new Persona(45);
+
+// p1.eta vale 45
+
+Persona p2;
+p2 = p1; // assegnamento
+
+p2.eta = 46;
+
+// quanto vale p1.eta??
+
+p1.eta vale 46
+```
+
+### Valori di default dei tipi primitivi come attributi di una classe
 
 Quando un tipo primitivo è membro di una classe, se non inizializzato prende i seguenti valori:
 
