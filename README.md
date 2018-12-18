@@ -233,7 +233,7 @@ Per il tipo `long` il valore si esprime mettendo il carattere `l` o `L` alla fin
 0xffL // Another long value
 ```
 
-*N.B*: Dividere un intero per `0` o eseguire l'operazione modulo `0` genera l'errore a runtime [ArithmeticException](https://docs.oracle.com/javase/7/docs/api/java/lang/ArithmeticException.html).
+**N.B:** Dividere un intero per `0` o eseguire l'operazione modulo `0` genera l'errore a runtime [ArithmeticException](https://docs.oracle.com/javase/7/docs/api/java/lang/ArithmeticException.html).
 
 Ogni tipo intero ha la corrispondente classe wrapper di tipo `Byte`, `Short`, `Integer` e `Long`.
 
@@ -733,7 +733,9 @@ Per paragone con il linguaggio C: [Array length in C](./howto_array_length_in_c.
 
 * Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
 
-* Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la clone di un oggetto (esempio un oggetto di tipo Persona o definite uan vostra classe). Modificate gli attributi e fere vedere le differenze rispetto all'assegnamento. 
+* Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la clone di un oggetto (esempio un oggetto di tipo Persona o definite uan vostra classe). Modificate gli attributi e fare vedere le differenze rispetto all'assegnamento.
+
+* Vedete [tutorial su array](./Array.md) eseguendo gli esempi.
 
 * Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare a una reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`.
 
