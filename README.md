@@ -377,7 +377,7 @@ class Persona {
 	int eta;
 
 	Persona(int eta) {
-		this.eta;
+		this.eta = eta;
 	}
 }
 ```
