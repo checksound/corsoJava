@@ -399,6 +399,9 @@ p2.eta = 46;
 ```
 `p1.eta` vale *46*.
 
+Visualizzando a livello di memoria:
+
+![reference_assigment](./reference_assigment.png)
 
 ### Valori di default dei tipi primitivi come attributi di una classe
 
