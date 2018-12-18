@@ -368,7 +368,7 @@ val1 = 6;
 // quanto vale val2?
 
 ```
-val2 contiene intero 5.
+`val2` contiene intero *5*.
 
 Ora lo stesso esempio con tipi reference:
 
@@ -393,9 +393,9 @@ p2 = p1; // assegnamento
 p2.eta = 46;
 
 // quanto vale p1.eta??
-
-p1.eta vale 46
 ```
+`p1.eta` vale *46*.
+
 
 ### Valori di default dei tipi primitivi come attributi di una classe
 
