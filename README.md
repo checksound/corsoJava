@@ -352,9 +352,9 @@ Il **garbage collector**, letteralmente collettore della spazzatura, si occupa d
 
 ### Assegnamento tipi reference vs tipi primitivi
 
-Esempio con tipi primitivi
+Esempio di assegnamento con tipi primitivi:
 
-```
+```java
 // Dichiarazione		
 int valA; 
 valA = 5;
@@ -368,12 +368,13 @@ valA = 6;
 // quanto vale valB?
 
 ```
-`valB` contiene intero *5*.
+`valB` contiene intero *5* mentre `valA` il valore *6*.
 
-Vedendo a livello di aree di memoria:
+Vedendo a livello di aree di memoria, surante l'esecuzione del codice:
+
 ![primitive_assignments](./primitive_assignment.png)
 
-Ora lo stesso esempio con tipi reference:
+Ora un esempio di assegnamento tra variabili con tipi reference:
 
 ```java
 class Persona {
@@ -384,6 +385,7 @@ class Persona {
 	}
 }
 ```
+
 ```java
 Persona p1;
 p1 = new Persona(45);
@@ -397,7 +399,7 @@ p2.eta = 46;
 
 // quanto vale p1.eta??
 ```
-`p1.eta` vale *46*.
+`p1.eta` vale *46* come `p2.eta`.
 
 Visualizzando a livello di memoria:
 
