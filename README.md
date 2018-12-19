@@ -477,6 +477,58 @@ Vedi: http://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html
 
 Paragrafo: *8.  Passing Argument into Methods*
 
+```java
+public class TestPassingPrimitive {
+   public static void main(String[] args) {
+      int number = 10;              // primitive type
+      System.out.println("In caller, before calling the method, the value is: " + number);
+      aMethodWithPrimitive(number); // invoke method
+      System.out.println("In caller, after calling the method, the value is: " + number);
+   }
+ 
+   public static void aMethodWithPrimitive(int number) {
+      System.out.println("Inside method, before operation, the value is " + number);
+      ++number;  // change the parameter
+      System.out.println("Inside method, after operation, the value is " + number);
+   }
+}
+```
+
+```java
+public class TestParameterReference {
+   public static void main(String[] args) {
+      StringBuffer sb = new StringBuffer("Hello");
+      System.out.println("In caller, before calling the method, the object is \"" + sb + "\"");
+      aMethodOnReference(sb);  // invoke method with side-effect
+      System.out.println("In caller, after calling the method, the object is \"" + sb + "\"");
+   }
+ 
+   public static void aMethodOnReference(StringBuffer sb) {
+      System.out.println("Inside method, before change, the object is \"" + sb + "\"");
+      sb.append(", world");  // change parameter
+      System.out.println("Inside method, after change, the object is \"" + sb + "\"");
+   }
+}
+```
+
+```java
+public class TestParameterReferenceReassign {
+   public static void main(String[] args) {
+      StringBuffer sb = new StringBuffer("Hello");
+      System.out.println("In caller, before calling the method, the object is \"" + sb + "\"");
+      aMethodOnReference(sb);  // invoke method with side-effect
+      System.out.println("In caller, after calling the method, the object is \"" + sb + "\"");
+   }
+ 
+   public static void aMethodOnReference(StringBuffer sb) {
+      System.out.println("Inside method, before change, the object is \"" + sb + "\"");
+      sb = new StringBuffer("world"); // re-assign the reference to the parameter
+      sb.append(" peace");            // the re-assigned parameter
+      System.out.println("Inside method, after change, the object is \"" + sb + "\"");
+   }
+}
+```
+
 ### Attributi e metodo statici di una classe
 
 ```java
