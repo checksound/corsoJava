@@ -150,16 +150,16 @@ double dB2 = Double.parseDouble("123.65");
 
 La scelta di mantenere tipi primitivi, utilizzati nelle operazioni matemetiche, all'interno del linguaggio Java, è stata giustificata proprio per questioni di performance: allocazione di dati sullo stack è più veloce rispetto alla `new` che alloca nell'area di memoria dello `heap`, inoltre l'accesso al tipo primitivo è diretto, mentre quello all'oggetto wrapper è tramite reference.
 
-I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti. Per analogia sulle collezioni, con quanto già visto in C# (Commonly Used Collection Types)[https://docs.microsoft.com/en-us/dotnet/standard/collections/commonly-used-collection-types].
+I tipi wrapper servono per inserire i dati nelle java collection: tipi di dati astratti come *Liste*, *Stack*, *Map*, *Set* che servono per lavorare su collezioni di oggetti. Per analogia sulle collezioni, con quanto già visto in C# [Commonly Used Collection Types](https://docs.microsoft.com/en-us/dotnet/standard/collections/commonly-used-collection-types).
 
 
-Tipi collezioni in java (solo per far capire di cosa parliamo)
+Tipi collezioni, strutture dati, fornite con il JDK: classi e interfaccie, utili per contenere insieme di oggetti omogenei.
 
 ![Interfacce collezioni](./colls-coreInterfaces.gif)
 
 Gli [array](#Array) sono il primo tipo di collezioni che vediamo, una collezione di tipi ordinata, sono la struttura dati più efficiente per mantenere dati sia primitivi che reference a oggetti omogenei ma hanno il limite che una volta creati hanno dimensione fissa. 
 
-Per questo, per avere strutture dati che abbiano dimensione variabile in base alle esigenze sono state introdotte nel JDK le [java collections](./Collections.md), un insieme di classi con diverse caratteristiche per tenere gli oggetti che sono stati creati nel programma.
+Per questo, per avere strutture dati che abbiano dimensione variabile in base alle esigenze sono state introdotte nel JDK le [java collections](./Collections.md), un insieme di classi con diverse caratteristiche per tenere gli oggetti che sono stati creati nel programma. Queste classi sono nel package `java.util.*`.
 
 Esempio di creazione di un array vs un `java.util.ArrayList`, struttura dati che fa parte delle [java collections](./Collections.md):
 
@@ -167,9 +167,10 @@ Esempio di creazione di un array vs un `java.util.ArrayList`, struttura dati che
 // array di 10 interi
 int arr[] = new int[10];
 
-// java.util.ArrayList
+// java.util.ArrayList di Integer
 ArrayList<Integer> arrL = new ArrayList<Integer>();
 
+// ArrayList di Person
 ArrayList<Person> arrL = new ArrayList<Person>();
 
 ```
@@ -278,11 +279,27 @@ float f = 6.02e23f;
 
 ## Reference Types
 
-Variabili dichiarate del tipo di una classe definita nel JDK o definita dal programmatore sono di tipo reference: quando creo un oggetto da una classe con l'operazione di `new` creo una reference all'oggetto, un riferimento che mi permette di utilizzare l'oggetto, cioè modificare il suo stato. E' un tipo di dato che è un istanza di una classe, che sia tra quelle fornite dal JDK o che sia stata definita da un programmatore.
+Mentre una variabile a un tipo primitivo contiene un *semplice valore*, una variabile a un tipo reference, contiene una *reference* a un oggetto o un array: i tipi reference includono *classi*, *interfacce*, *enumerativi* e *array*.
+
+Java has three kinds of types:
+
+1. Primitive type: There are eight primitive types in Java: `byte`, `short`, `int`, `long`, `float`, `double`, `char`, and `boolean`. A primitive-type variable holds a simple value.
+1. Reference type: Reference types include `class`, `interface`, `enum` and `array`. A reference-type variable holds a reference to an object or array.
+1. A special `null` type, holding a special `null` reference. It could be assigned to a reference variable that does not reference any object.
+
+![Type_All](./Type_All.png)
+
+A primitive variable holds a primitive value (in this storage). A reference variable holds a reference to an object or array in the heap, or null. A references variable can hold a reference of the type or its sub-type (polymorphism). The value null is assigned to a reference variable after it is declared. A reference is assigned after the instance is constructed. An object (instance) resides in the heap. It must be accessed via a reference.
+
+![OOP_PrimitiveVsClass](./OOP_PrimitiveVsClass.png)
+
+Java implicitly defines a reference type for each possible array type - one for each of the eight primitive types and an object array.
+
+![Type_Array](./Type_Array.png)
 
 Finora abbiamo visto esempi di reference creati dalle classi wrapper dei tipi primitivi, classi già definite all'interno del JDK.
 
-Definiamo una classe con alcuni semplici attributi.
+Definiamo ora noi una classe con alcuni semplici attributi.
 
 ```java
 class DataOnly {
@@ -291,13 +308,14 @@ class DataOnly {
 	boolean b;
 }
 ```
-questa classe non fa niente se non contenere dei dati. Se creiamo un oggeto da questa classe, `dataObj` è la reference:
+questa classe non fa niente se non contenere dei dati. Se creiamo un oggeto da questa classe, la variabile `dataObj` è la reference all'oggetto:
 
 ```java
+// instanziazione oggetto
 DataOnly dataObj = new DataOnly();
 ```
 
-tramite la refernce data possiamo modificare l'oggetto (modificare il suo stato):
+tramite la refernce possiamo modificare l'oggetto (modificare il suo stato):
 
 ```java
 objectReference.member
@@ -368,9 +386,9 @@ valA = 6;
 // quanto vale valB?
 
 ```
-`valB` contiene intero *5* mentre `valA` il valore *6*.
+`valB` contiene intero *5* mentre `valA` il valore *6*. Nulla di inaspettato in tutto questo.
 
-Vedendo a livello di aree di memoria, surante l'esecuzione del codice:
+Vedendo a livello di aree di memoria, durante l'esecuzione del codice:
 
 ![primitive_assignments](./primitive_assignment.png)
 
@@ -452,6 +470,12 @@ Esempio con parametro di ritorno:
 int x = a.f();
 ```
 Il tipo del ritorno deve essere compatibile con il tipo di **x**. La chiamata di un metodo è spesso detto *inviare un messaggio all'oggetto*. Nell'esempio precedente, il messaggio è **f()** e l'oggetto è **a**. La programmazione ad oggetti è spesso sintetizzata con il concetto di 'spedire un messaggio a un oggetto'. 
+
+### Passagio parametri di tipo primitivi vs tipo reference
+
+Vedi: http://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html
+
+Paragrafo: *8.  Passing Argument into Methods*
 
 ### Attributi e metodo statici di una classe
 
@@ -535,15 +559,15 @@ class DataOnly {
 
 ```
 
-il codice sarà in un file nella directory `it/isisgallarate/base/TestSimpleClass.java`
+il codice sarà in un file nella directory:  `it/isisgallarate/base/TestSimpleClass.java`
 
-Se per ordine nel progetto mettiamo il codice sorgente nella directory `src`, per compilare:
+Se per una questione di ordine, nel progetto mettiamo il codice sorgente nella directory `src`, per compilare, eseguiamo da prompt il seguente comando:
 
 `javac -d target src\it\isisgallarate\base\TestSimpleClass.java`
 
-Il codice compilato .class viene creato nella directory target perchè abbiamo specificato l'opzione *-d*.
+Il codice sorgente *.java* viene compilato creando i file *.class* (bytecode) nella directory di nome *target* perchè abbiamo specificato l'opzione *-d* (opzione che sta per directory di destinazione).
 
-Per eseguire:
+Per eseguire il programma:
 
 `java -classpath target it.isisgallarate.base.TestSimpleClass`
 
