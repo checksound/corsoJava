@@ -536,7 +536,8 @@ public class TestParameterReferenceReassign {
 
 ### Attributi e metodo statici di una classe
 
-Vedi  http://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html 
+Vedi: http://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html 
+
 Paragrafo: *1 The "static" Variables and Methods*
 
 ```java
