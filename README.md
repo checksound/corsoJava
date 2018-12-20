@@ -867,7 +867,13 @@ Per paragone con il linguaggio C: [Array length in C](./howto_array_length_in_c.
 
 http://www.ntu.edu.sg/home/ehchua/programming/java/J3d_String.html
 
-**ESERCIZIO:**
+---------------------------------------------------------
+## RISORSE ##
+* [Come compilare con Java - configurazione ambienet](./HowToCompileInJava.md)
+* [Package and Classpath](http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html)
+----------------------------------------------------------
+
+**ESERCIZI:**
 
 1. Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
