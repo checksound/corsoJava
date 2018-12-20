@@ -477,6 +477,8 @@ Vedi: http://www.ntu.edu.sg/home/ehchua/programming/java/J3c_OOPWrappingUp.html
 
 Paragrafo: *8.  Passing Argument into Methods*
 
+**Passaggio di tipi primitivi come argomento del metodo**
+
 ```java
 public class TestPassingPrimitive {
    public static void main(String[] args) {
@@ -494,6 +496,8 @@ public class TestPassingPrimitive {
 }
 ```
 
+**Passaggio di un tipo reference come argomento del metodo**
+
 ```java
 public class TestParameterReference {
    public static void main(String[] args) {
@@ -510,6 +514,7 @@ public class TestParameterReference {
    }
 }
 ```
+**Riassegnamento di una reference dentro un metodo**
 
 ```java
 public class TestParameterReferenceReassign {
