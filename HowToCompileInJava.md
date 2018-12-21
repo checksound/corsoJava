@@ -14,7 +14,7 @@ The steps in writing a Java program is illustrated as above:
 
 Dal prompt dei comani deve essere possibile eseguire il programma `javac`, il compilatore java.
 
-Quando installate il JDK (*Java Development Kit*) installa sul vostro PC sia il compilatore `javac` (compila i file `.java` in `.class`) sia l'interprete `java` che è poi l'interprete che esegue il bytecode (i file `.class`).
+Quando installate il JDK (*Java Development Kit*) sul vostro PC, installate sia il compilatore `javac` (compila i file `.java` in `.class`) sia l'interprete `java` che esegue il bytecode (i file `.class`).
 
 Ad esempio sul mio PC ho installato il JDK in:
 
@@ -24,13 +24,13 @@ sotto la directory
 
 `C:\dev\jdk-11.0.1\bin` ci sono i programmmi `javac` e `java`.
 
-Come per qualsiasi altro programma per far si che si possano eseguire da qualsiasi directory che sia diversa dalla directory in cui è stato installato il JDK è necessario configurare la variabile d'ambiente `PATH` con il percorso agli eseguibili, `javac` e `java`.
+Come per qualsiasi altro programma per far si che si possano eseguire da qualsiasi directory che sia diversa dalla directory in cui è stato installato, è necessario configurare la variabile d'ambiente `PATH` con il percorso agli eseguibili, `javac` e `java`.
 
-Nel nostro caso dovremo settare aggiungere al PATH il percorso `C:\dev\jdk-11.0.1\bin`.
+Nel nostro caso dovremo aggiungere al PATH il percorso `C:\dev\jdk-11.0.1\bin`.
 
 Il fatto di dover settare la variabile d'ambiente `PATH` perchè un programma sia trovato vale sia per sistemi operativi Windows, Linux e Unix. Cambia solo la sintessi tra i vari sistemi su come settare la variabile d'ambiente.
 
-Tornando al nostro caso su Windows o create uno script `.bat` che eseguite dal prompt dei comandi contenete in questo caso:
+Tornando al nostro caso su Windows, il primo modo è di creare uno script `.bat` che eseguite dal prompt dei comandi, contenete in questo caso:
 
 `set PATH=%PATH%;C:\dev\jdk-11.0.1\bin`
 
@@ -47,7 +47,11 @@ C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:
 C:\Users\cam>
 ```
 
-Ora potete eseguire `javac` ad esempio:
+Potere vedere che in coda è stato aggiunto il percorso `C:\dev\jdk-11.0.1\bin` come volevamo.
+
+Ora potete eseguire `javac` e il comando viene trovato.
+
+Ad esempio digitando da prompt:
 
 ```
 C:\Users\cam>javac -version
@@ -56,7 +60,7 @@ javac 11.0.1
 C:\Users\cam>
 ```
 
-**N.B:** se aprite un altro prompt di comandi il `PATH` qui non è con il nuovo `PATH` che avete configurato, dovete eseguite anche qui lo script per aggiungere al  path il percorso a java.
+**N.B:** se aprite un altro prompt di comandi il `PATH` qui non è con il nuovo `PATH` che avete configurato: dovete eseguite anche qui lo script per aggiungere al  path il percorso a java.
 
 Tutto ciò è molto scomodo.
 
