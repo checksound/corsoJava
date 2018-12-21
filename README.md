@@ -879,11 +879,13 @@ http://www.ntu.edu.sg/home/ehchua/programming/java/J3d_String.html
 
 **ESERCIZI:**
 
-1. Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
+1. Eseuguite il tutorial [Package and Classpath](http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html). Se fosse necessario configurare l'ambiente per eseguire la compilazione con `javac`, quì del materiale [come compilare in Java](HowToCompileInJava.md).
+ 
+2. Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
-2. Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
+3. Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
 
-3. Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la `clone` di un oggetto (esempio un oggetto di tipo Persona o definite una vostra classe). Modificate gli attributi e fare vedere le differenze rispetto all'assegnamento.
+4. Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la `clone` di un oggetto (esempio un oggetto di tipo Persona o definite una vostra classe). Modificate gli attributi e fare vedere le differenze rispetto all'assegnamento.
 ```java
 
 Persona pA = new Persona("MARIO");
@@ -899,9 +901,9 @@ pA.name = "PIPPO"
 
 ```
 
-4. Vedete [tutorial su array](./Array.md) eseguendo gli esempi.
+5. Vedete [tutorial su array](./Array.md) eseguendo gli esempi.
 
-5. Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare la prima reference a una seconda reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`. 
+6. Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare la prima reference a una seconda reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`. 
 
 ```java
 Persona[] arrPeopleA = new Persona[10];
@@ -910,9 +912,9 @@ Persona[] arrPeopleB = arrPeopleA;
 Persona[] arrPeopleC = arrPeopleA.clone();
 
 ```
-6. Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la prova a utilizzare invece la classe `java.util.Vector`. 
+7. Dato l'esempio con classi `Enoteca` e `CassaDiVini`, all'inizio avere utilizzato la struttura array per contenere l'elenco delle casse; fare la prova a utilizzare invece la classe `java.util.Vector`. 
 
-7. Utilizzare i metodi `contains` e `indexOf` della classe `java.util.Vector` per cercare se c'è una certo tipo di cassa di vini.
+8. Utilizzare i metodi `contains` e `indexOf` della classe `java.util.Vector` per cercare se c'è una certo tipo di cassa di vini.
 
 
 
