@@ -72,7 +72,7 @@ Il metodo alternativo e in genere utilizzato del programmatore è quello di conf
 
 Qui si apre un pannello *Proprietà di sistema* e cliccate sul tab 'Avanzate' e da qui su il bottone 'Variabili d'ambiente'.
 
-![configura_variabili_ambiente](./configura_variabili_ambiente.png)
+![configura_variabili_ambiente](./configura_variabili_ambiente.PNG)
 
 Qui settate le variabili d'ambiente che vi interessano con *nuova* o *modifica*.
 
