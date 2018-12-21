@@ -873,14 +873,14 @@ http://www.ntu.edu.sg/home/ehchua/programming/java/J3d_String.html
 
 ---------------------------------------------------------
 ## RISORSE ##
-* [Come compilare con Java - configurazione ambienet](./HowToCompileInJava.md)
+* [Come compilare con Java - configurazione ambiente](./HowToCompileInJava.md)
 * [Package and Classpath](http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html)
 ----------------------------------------------------------
 
 **ESERCIZI:**
 
 1. Eseuguite il tutorial [Package and Classpath](http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html). Se fosse necessario configurare l'ambiente per eseguire la compilazione con `javac`, quì del materiale [come compilare in Java](HowToCompileInJava.md).
- 
+
 2. Verificate che il metodo `equals` è stato reimplementato nelle classi `String` e dei tipi wrapper dei tipi primitivi (`Integer`, `Float`, `Double`...), costruendo dei programmi di esempio. Compilateli ed eseguiteli (fate dei semplici file .bat per eseguire le due operazioni).
 
 3. Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
