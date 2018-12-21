@@ -885,7 +885,8 @@ http://www.ntu.edu.sg/home/ehchua/programming/java/J3d_String.html
 
 3. Definite due classi con diverso nome ma praticamente uguali come attributi, l'unica differenza è che in una il metodo `equals` è reimplementato. Implementate quindi in una classe il metodo `equals` per fare il confronto sui valori, mentre nell'altra vi basate sull'implementazione ereditata dalla classe `Object`. Fate vedere il diverso comportamento di oggetti creati da queste due classi.
 
-4. Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la `clone` di un oggetto (esempio un oggetto di tipo Persona o definite una vostra classe). Modificate gli attributi e fare vedere le differenze rispetto all'assegnamento.
+4. Abbiamo visto l'assegnamento di tipi primitivi e di oggetti (esempio di oggetti di tipo *Persona*). Fate un esempio dell'utilizzo del metodo `clone` per far vedere la differenza con l'assegnamento. Scrivete del codice che esegue la `clone` di un oggetto (esempio un oggetto di tipo Persona o definite una vostra classe). Modificate gli attributi e fare vedere le differenze rispetto all'assegnamento. (**AVANZATO: lo vediamo in classe, come implementare una clone di un oggetto**: [it/isisgallarate/introduzione/CloneVsAssigmentObjects.java](https://github.com/5MAINF/EserciziIntroduzioneJava/blob/master/src/it/isisgallarate/introduzione/CloneVsAssigmentObjects.java) o [it/isisgallarate/introduzione/CloneImpVsAssigmentObjects.java](https://github.com/5MAINF/EserciziIntroduzioneJava/blob/master/src/it/isisgallarate/introduzione/CloneImpVsAssigmentObjects.java))
+
 ```java
 
 Persona pA = new Persona("MARIO");
@@ -903,9 +904,11 @@ pA.name = "PIPPO"
 
 5. Vedete [tutorial su array](./Array.md) eseguendo gli esempi.
 
-6. Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare la prima reference a una seconda reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`. 
+6. Anche gli array in java sono di tipo reference anche se non c'è una classe Array ma si esegue l'operazione di *new*. Creare un array contenente oggetti di tipo `Persona`. Assegnare la prima reference a una seconda reference di tipo array di `Persona`. A una terza reference di array di `Persona` assegnare la `clone` dell'array. Descrivere con un disegno lo stato della memoria. Fare un programma che modifica il contenuto degli array e degli oggetti `Persona` e vedere le differeze nel caso di array assegnato e di array ottentuto con l'operazione di `clone`. Vedi: [it/isisgallarate/introduzione/CloneArray.java](https://github.com/5MAINF/EserciziIntroduzioneJava/blob/master/src/it/isisgallarate/introduzione/CloneArray.java)
+
 
 ```java
+
 Persona[] arrPeopleA = new Persona[10];
 Persona[] arrPeopleB = arrPeopleA;
 
