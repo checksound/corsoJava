@@ -8,7 +8,7 @@ Java doc: https://docs.oracle.com/javase/7/docs/api/index.html?overview-summary.
 
 Libro: **Java in a Nutshell** - 6th edition
 
-[Corso Java](https://soundcheck.gitbook.io/corsojava/)
+[Corso Java](https://checksound.gitbook.io/corsojava/)
 
 
 
